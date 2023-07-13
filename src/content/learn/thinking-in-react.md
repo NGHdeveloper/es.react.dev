@@ -142,11 +142,11 @@ function ProductTable({ products }) {
 function SearchBar() {
   return (
     <form>
-      <input type="text" placeholder="Search..." />
+      <input type="text" placeholder="Buscar..." />
       <label>
         <input type="checkbox" />
         {' '}
-        Only show products in stock
+        Mostrar solo productos en stock
       </label>
     </form>
   );
@@ -392,13 +392,13 @@ function SearchBar({ filterText, inStockOnly }) {
       <input 
         type="text" 
         value={filterText} 
-        placeholder="Search..."/>
+        placeholder="Buscar..."/>
       <label>
         <input 
           type="checkbox" 
           checked={inStockOnly} />
         {' '}
-        Only show products in stock
+        Mostrar solo productos en stock
       </label>
     </form>
   );
@@ -441,7 +441,9 @@ Nota que editar el formulario aún no funciona. Hay un error en la consola del _
 
 <ConsoleBlock level="error">
 
-You provided a \`value\` prop to a form field without an \`onChange\` handler. This will render a read-only field. (Has proporcionado una prop \`value\` a un campo de un formulario sin el manejador de eventos \`onChange\`. Esto hará que se renderice un campo de solo lectura.)
+Warning: You provided a \`value\` prop to a form field without an \`onChange\` handler. This will render a read-only field.  
+**(Traducción)**  
+Advertencia: Has proporcionado una prop \`value\` a un campo de un formulario sin el manejador de eventos \`onChange\`. Esto hará que se renderice un campo de solo lectura.
 
 </ConsoleBlock>
 
@@ -454,7 +456,7 @@ function SearchBar({ filterText, inStockOnly }) {
       <input 
         type="text" 
         value={filterText} 
-        placeholder="Search..."/>
+        placeholder="Buscar..."/>
 ```
 
 Sin embargo, no has añadido ningún código para responder a las acciones del usuario como la escritura en el teclado. Este será tu último paso.
@@ -488,7 +490,7 @@ Dentro de `SearchBar`, añadirás el manejador del evento `onChange` y modificar
 <input 
   type="text" 
   value={filterText} 
-  placeholder="Search..." 
+  placeholder="Buscar..." 
   onChange={(e) => onFilterTextChange(e.target.value)} />
 ```
 
@@ -595,7 +597,7 @@ function SearchBar({
     <form>
       <input 
         type="text" 
-        value={filterText} placeholder="Search..." 
+        value={filterText} placeholder="Buscar..." 
         onChange={(e) => onFilterTextChange(e.target.value)} />
       <label>
         <input 
@@ -603,7 +605,7 @@ function SearchBar({
           checked={inStockOnly} 
           onChange={(e) => onInStockOnlyChange(e.target.checked)} />
         {' '}
-        Only show products in stock
+        Mostrar solo productos en stock
       </label>
     </form>
   );
